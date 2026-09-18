@@ -51,7 +51,7 @@ Genera `dist/folders-for-claude-1.0.0.zip`. Cada vegada que publiquis una actual
    - Marquee (opcional): `store/screenshots/promo-marquee-1400x560.png`.
    - Web oficial: URL de GitHub Pages. URL d'assistència: la mateixa o `mailto:`.
 3. **Privacy**: copia-ho tot de `store/privacy-form.md`.
-4. **Distribution**: *Free of charge* (el pagament va per ExtensionPay, no per la botiga). Visibilitat: *Public*. Regions: totes.
+4. **Distribution**: *Contains in-app purchases* / "Contiene compras en la aplicación" (tenim pla Pro de pagament; marcar "0 €" seria fals). Visibilitat: *Public*. Regions: totes.
 5. **Submit for review**. Normalment tarda de 1 a 7 dies (les primeres vegades pot tardar més).
 
 ## Si la rebutgen

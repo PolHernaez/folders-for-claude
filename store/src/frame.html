@@ -1,0 +1,124 @@
+<!doctype html>
+<!-- Marketing frame for store screenshots (1280x800) and promo tiles.
+     Params: img, title, sub, size=shot|tile|marquee -->
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      html,
+      body {
+        margin: 0;
+        width: 100%;
+        height: 100%;
+      }
+      body {
+        font-family: "Segoe UI", system-ui, Roboto, sans-serif;
+        background: #f4efe6;
+        color: #29261b;
+        overflow: hidden;
+      }
+      .shot {
+        display: grid;
+        grid-template-columns: 330px 1fr;
+        align-items: center;
+        gap: 36px;
+        height: 100%;
+        padding: 0 0 0 56px;
+        box-sizing: border-box;
+      }
+      .copy .logo {
+        width: 56px;
+        height: 56px;
+        margin-bottom: 26px;
+      }
+      h1 {
+        font-size: 40px;
+        line-height: 1.12;
+        margin: 0 0 18px;
+        letter-spacing: -0.02em;
+      }
+      p {
+        font-size: 19px;
+        line-height: 1.45;
+        color: #5b584f;
+        margin: 0;
+      }
+      .frame {
+        height: 680px;
+        border-radius: 14px 0 0 14px;
+        overflow: hidden;
+        box-shadow: 0 30px 70px rgba(60, 40, 20, 0.25);
+        border: 1px solid rgba(0, 0, 0, 0.08);
+        border-right: 0;
+      }
+      .frame img {
+        display: block;
+        height: 100%;
+      }
+      /* small promo tile 440x280 */
+      .tile {
+        height: 100%;
+        background: #c96442;
+        color: #fbf5ee;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 0 34px;
+        box-sizing: border-box;
+      }
+      .tile .row {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+      }
+      .tile img {
+        width: 72px;
+        height: 72px;
+      }
+      .tile h1 {
+        font-size: 30px;
+        margin: 0;
+        color: #fff;
+      }
+      .tile p {
+        color: #fbe7da;
+        font-size: 17px;
+        margin-top: 16px;
+      }
+      /* marquee 1400x560 */
+      .marquee {
+        height: 100%;
+        display: grid;
+        grid-template-columns: 520px 1fr;
+        align-items: center;
+        gap: 40px;
+        padding-left: 80px;
+        box-sizing: border-box;
+      }
+      .marquee h1 {
+        font-size: 50px;
+      }
+      .marquee .frame {
+        height: 470px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script>
+      const q = new URLSearchParams(location.search);
+      const size = q.get("size") || "shot";
+      const logo = '<img class="logo" src="icon-full.svg" alt="">';
+      const root = document.getElementById("root");
+      root.style.height = "100%";
+      if (size === "tile") {
+        root.innerHTML =
+          '<div class="tile"><div class="row"><img src="icon-white.svg" alt=""><h1>' + q.get("title") + "</h1></div><p>" + q.get("sub") + "</p></div>";
+      } else {
+        root.innerHTML =
+          '<div class="' + size + '"><div class="copy">' + logo + "<h1>" + q.get("title") + "</h1><p>" + q.get("sub") +
+          '</p></div><div class="frame"><img src="' + q.get("img") + '" alt=""></div></div>';
+      }
+    </script>
+  </body>
+</html>

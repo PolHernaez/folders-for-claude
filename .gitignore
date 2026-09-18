@@ -1,0 +1,4 @@
+dist/
+.claude/
+store/src/_*.html
+__pycache__/

@@ -1,0 +1,70 @@
+:root {
+  --bg: #faf9f5;
+  --text: #29261b;
+  --muted: #6f6b61;
+  --accent: #c96442;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #1f1e1d;
+    --text: #f0efec;
+    --muted: #a6a39b;
+    --accent: #e08563;
+  }
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 17px/1.6 system-ui, "Segoe UI", Roboto, sans-serif;
+}
+
+main {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 48px 16px 64px;
+}
+
+h1 {
+  font-size: 34px;
+  line-height: 1.2;
+  margin: 16px 0 8px;
+}
+
+h2 {
+  font-size: 21px;
+  margin-top: 36px;
+}
+
+a {
+  color: var(--accent);
+}
+
+.lead {
+  font-size: 20px;
+  color: var(--muted);
+}
+
+.muted {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 20px;
+  border-radius: 10px;
+  background: var(--accent);
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+code {
+  font-size: 0.9em;
+  background: rgba(127, 127, 127, 0.15);
+  padding: 1px 5px;
+  border-radius: 4px;
+}

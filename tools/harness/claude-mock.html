@@ -1,0 +1,305 @@
+<!doctype html>
+<!-- Mock that reproduces the *structure* of claude.ai's sidebar (same
+     data-testid attributes the extension relies on) so we can test the
+     content script locally. Query params: lang=ca|es|..., pro=1, reset=1,
+     seed=1 (sample folders), light=1, chat=<id>. -->
+<html data-mode="dark">
+  <head>
+    <meta charset="utf-8" />
+    <title>Claude</title>
+    <style>
+      :root {
+        --df-row-h: 32px;
+        --df-row-px: 10px;
+        --df-radius-pill: 8px;
+      }
+      html[data-mode="dark"] {
+        --bg: #1f1e1d;
+        --side: #1a1918;
+        --text: #f0efec;
+        --text2: #b8b5ad;
+        --muted: #8d8a83;
+        --hover: rgba(255, 255, 255, 0.06);
+        --bubble: #2d2c2a;
+        --border: rgba(255, 255, 255, 0.08);
+      }
+      html[data-mode="light"] {
+        --bg: #faf9f5;
+        --side: #f3f1ea;
+        --text: #29261b;
+        --text2: #5b584f;
+        --muted: #858176;
+        --hover: rgba(0, 0, 0, 0.045);
+        --bubble: #efece3;
+        --border: rgba(0, 0, 0, 0.08);
+      }
+      body {
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        background: var(--bg);
+        color: var(--text);
+        font: 14px/1.5 system-ui, "Segoe UI", Roboto, sans-serif;
+        overflow: hidden;
+      }
+      aside {
+        width: 288px;
+        flex: none;
+        background: var(--side);
+        border-right: 1px solid var(--border);
+        display: flex;
+        flex-direction: column;
+      }
+      .brand {
+        padding: 14px 16px 10px;
+        font-size: 17px;
+        font-weight: 600;
+      }
+      .top a,
+      .row {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        height: 32px;
+        padding: 0 10px;
+        margin: 0 8px;
+        border-radius: 8px;
+        color: var(--text2);
+        text-decoration: none;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .top a:hover,
+      .row:hover {
+        background: var(--hover);
+      }
+      .row.current {
+        background: var(--hover);
+        color: var(--text);
+      }
+      .scroll {
+        flex: 1;
+        overflow-y: auto;
+        padding: 8px 0;
+      }
+      .scroll > div {
+        margin: 0 8px;
+      }
+      .sec {
+        font-size: 12px;
+        color: var(--muted);
+        padding: 8px 10px 4px;
+      }
+      [data-testid="sidebar-pinned"] .row,
+      [data-testid="sidebar-recents"] .row {
+        margin: 0;
+      }
+      .user {
+        border-top: 1px solid var(--border);
+        padding: 12px 16px;
+        color: var(--text2);
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .avatar {
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+        background: #5b5a56;
+        display: grid;
+        place-items: center;
+        font-size: 12px;
+        color: #fff;
+      }
+      main {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        overflow: hidden;
+      }
+      .title {
+        align-self: stretch;
+        padding: 14px 24px;
+        font-weight: 500;
+        border-bottom: 1px solid var(--border);
+      }
+      .thread {
+        width: 100%;
+        max-width: 720px;
+        padding: 24px;
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+        flex: 1;
+      }
+      .you {
+        align-self: flex-end;
+        background: var(--bubble);
+        padding: 10px 14px;
+        border-radius: 14px;
+        max-width: 70%;
+      }
+      .bot {
+        color: var(--text);
+      }
+      .bot p {
+        margin: 0 0 10px;
+      }
+      .line {
+        height: 10px;
+        border-radius: 5px;
+        background: var(--bubble);
+        margin: 8px 0;
+      }
+      .composer {
+        width: calc(100% - 48px);
+        max-width: 720px;
+        margin: 0 0 24px;
+        height: 96px;
+        border: 1px solid var(--border);
+        border-radius: 18px;
+        background: var(--bubble);
+        color: var(--muted);
+        padding: 14px 16px;
+        box-sizing: border-box;
+      }
+    </style>
+    <script>
+      const P = new URLSearchParams(location.search);
+      if (P.get("light") === "1") document.documentElement.setAttribute("data-mode", "light");
+    </script>
+    <script src="chrome-shim.js"></script>
+    <script>
+      const CHATS = [
+        ["0b6f2a3e-1c11-4a2b-9c3d-0f1e2d3c4b01", "Q3 marketing plan draft"],
+        ["0b6f2a3e-1c11-4a2b-9c3d-0f1e2d3c4b02", "Python script to clean CSV files"],
+        ["0b6f2a3e-1c11-4a2b-9c3d-0f1e2d3c4b03", "Cover letter for UX designer role"],
+        ["0b6f2a3e-1c11-4a2b-9c3d-0f1e2d3c4b04", "SQL query optimization"],
+        ["0b6f2a3e-1c11-4a2b-9c3d-0f1e2d3c4b05", "Blog post: remote work tips"],
+        ["0b6f2a3e-1c11-4a2b-9c3d-0f1e2d3c4b06", "React form validation bug"],
+        ["0b6f2a3e-1c11-4a2b-9c3d-0f1e2d3c4b07", "Weekly meal prep ideas"],
+        ["0b6f2a3e-1c11-4a2b-9c3d-0f1e2d3c4b08", "Pitch deck feedback"],
+        ["0b6f2a3e-1c11-4a2b-9c3d-0f1e2d3c4b09", "Explain Docker volumes"],
+        ["0b6f2a3e-1c11-4a2b-9c3d-0f1e2d3c4b10", "Trip itinerary: Lisbon 4 days"],
+        ["0b6f2a3e-1c11-4a2b-9c3d-0f1e2d3c4b11", "Customer email templates"],
+        ["0b6f2a3e-1c11-4a2b-9c3d-0f1e2d3c4b12", "Thesis outline chapter 2"],
+        ["0b6f2a3e-1c11-4a2b-9c3d-0f1e2d3c4b13", "Regex for phone numbers"],
+        ["0b6f2a3e-1c11-4a2b-9c3d-0f1e2d3c4b14", "Landing page copy A/B"],
+        ["0b6f2a3e-1c11-4a2b-9c3d-0f1e2d3c4b15", "Study plan for Java exam"],
+        ["0b6f2a3e-1c11-4a2b-9c3d-0f1e2d3c4b16", "Git rebase vs merge"]
+      ];
+      if (P.get("seed") === "1") {
+        const c = (i) => ({ id: CHATS[i][0], title: CHATS[i][1] });
+        const data = {
+          v: 1,
+          updatedAt: Date.now(),
+          folders: [
+            { id: "f1", name: "Work", color: "#d97757", collapsed: false, chats: [c(0), c(7), c(13), c(10)] },
+            { id: "f2", name: "Code", color: "#4a90d9", collapsed: false, chats: [c(1), c(3), c(5), c(8)] },
+            { id: "f3", name: "Study", color: "#5fa35f", collapsed: true, chats: [c(11), c(14)] },
+            { id: "f4", name: "Personal", color: "#9b6bd6", collapsed: true, chats: [c(6), c(9)] }
+          ]
+        };
+        const all = JSON.parse(localStorage.getItem("shim_local") || "{}");
+        all.cf_data = data;
+        if (P.get("pro") !== "1") data.folders = data.folders.slice(0, 3);
+        localStorage.setItem("shim_local", JSON.stringify(all));
+      }
+    </script>
+  </head>
+  <body>
+    <aside data-testid="sidebar">
+      <div class="brand">Chat app</div>
+      <div class="top">
+        <a href="#">＋ New chat</a>
+        <a href="#">Projects</a>
+        <a href="/recents" id="recents-link">Chats</a>
+      </div>
+      <div class="scroll">
+        <div data-testid="nav-pin-rows"></div>
+        <div data-testid="sidebar-pinned">
+          <div class="sec">Starred</div>
+          <div id="starred"></div>
+        </div>
+        <div data-testid="sidebar-recents">
+          <div class="sec">Recents</div>
+          <div id="recents"></div>
+        </div>
+      </div>
+      <div class="user"><div class="avatar">JD</div> Jamie D.</div>
+    </aside>
+    <main>
+      <div class="title" id="title">New chat</div>
+      <div class="thread" id="thread"></div>
+      <div class="composer">Reply…</div>
+    </main>
+
+    <script>
+      const byId = Object.fromEntries(CHATS);
+      function link(id, title) {
+        const a = document.createElement("a");
+        a.className = "row";
+        a.href = "/chat/" + id;
+        a.textContent = title;
+        return a;
+      }
+      document.getElementById("starred").appendChild(link(CHATS[15][0], CHATS[15][1]));
+      CHATS.slice(0, 15).forEach(([id, t]) => document.getElementById("recents").appendChild(link(id, t)));
+
+      function show() {
+        const m = /\/chat\/([0-9a-f-]{36})/.exec(location.pathname);
+        const t = m ? byId[m[1]] : null;
+        document.getElementById("title").textContent = t || "New chat";
+        document.title = t ? t + " - Claude" : "Claude";
+        document.querySelectorAll("aside a.row").forEach((a) =>
+          a.classList.toggle("current", m && a.getAttribute("href") === "/chat/" + m[1])
+        );
+        document.getElementById("thread").innerHTML = t
+          ? '<div class="you">' + t + '</div><div class="bot"><p>Sure — here is a first version you can adapt:</p>' +
+            '<div class="line" style="width:92%"></div><div class="line" style="width:84%"></div><div class="line" style="width:88%"></div>' +
+            '<div class="line" style="width:60%"></div><p style="margin-top:14px">Want me to refine any part?</p></div>'
+          : "";
+      }
+      document.addEventListener("click", (e) => {
+        const a = e.target.closest && e.target.closest("a[href^='/']");
+        if (!a) return;
+        e.preventDefault();
+        history.pushState({}, "", a.getAttribute("href") + location.search);
+        show();
+      });
+      window.addEventListener("popstate", show);
+      const start = P.get("chat");
+      if (start) history.replaceState({}, "", "/chat/" + CHATS[+start][0] + location.search);
+      show();
+    </script>
+    <script>
+      // ?demo=menu|search|folder|upgrade|add puts the UI in a given state for screenshots.
+      const DEMO = P.get("demo");
+      if (DEMO)
+        setTimeout(() => {
+          const root = document.getElementById("cf-folders-host").shadowRoot;
+          const btns = root.querySelectorAll(".cf-header-actions .cf-icon-btn");
+          if (DEMO === "menu") btns[0].click();
+          if (DEMO === "search") {
+            btns[1].click();
+            const i = root.querySelector(".cf-search");
+            i.value = P.get("q") || "sql";
+            i.dispatchEvent(new Event("input"));
+          }
+          if (DEMO === "folder") root.querySelectorAll(".cf-folder-row .cf-row-action")[0].click();
+          if (DEMO === "upgrade") btns[btns.length - 1].click();
+          if (DEMO === "add") {
+            root.querySelectorAll(".cf-folder-row .cf-row-action")[1].click();
+            document.getElementById("cf-overlay-host").shadowRoot.querySelector(".cf-menu-item").click();
+          }
+          document.activeElement && document.activeElement.blur && document.activeElement.blur();
+        }, 600);
+    </script>
+    <script src="/extension/content/storage.js"></script>
+    <script src="/extension/content/selectors.js"></script>
+    <script src="/extension/content/content.js"></script>
+  </body>
+</html>

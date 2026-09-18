@@ -1,0 +1,185 @@
+{
+  "extName": {
+    "message": "Carpetas para Claude – Organiza y busca chats"
+  },
+  "extShortName": {
+    "message": "Carpetas para Claude"
+  },
+  "extDescription": {
+    "message": "Organiza tus chats de Claude en carpetas dentro de la barra lateral. Busca, colorea y encuentra cualquier conversación."
+  },
+  "folders": {
+    "message": "Carpetas"
+  },
+  "addCurrentChat": {
+    "message": "Añadir este chat a una carpeta"
+  },
+  "search": {
+    "message": "Buscar"
+  },
+  "newFolder": {
+    "message": "Nueva carpeta"
+  },
+  "newFolderWithChat": {
+    "message": "Nueva carpeta con este chat…"
+  },
+  "searchInFolders": {
+    "message": "Buscar en carpetas…"
+  },
+  "folderOptions": {
+    "message": "Opciones de carpeta"
+  },
+  "removeFromFolder": {
+    "message": "Quitar de la carpeta"
+  },
+  "untitled": {
+    "message": "Chat sin título"
+  },
+  "emptyFolder": {
+    "message": "Vacía. Abre un chat y usa el botón carpeta+."
+  },
+  "createFirstFolder": {
+    "message": "+ Crea tu primera carpeta"
+  },
+  "noResults": {
+    "message": "Sin resultados"
+  },
+  "freeLimitReached": {
+    "message": "Plan gratis: $1 carpetas. Pásate a Pro para ilimitadas →"
+  },
+  "rateAsk": {
+    "message": "¿Te ayudan las carpetas? Una valoración rápida ayuda mucho a un desarrollador independiente."
+  },
+  "rateYes": {
+    "message": "Valorar"
+  },
+  "dismiss": {
+    "message": "Ahora no"
+  },
+  "syncFull": {
+    "message": "El almacenamiento de sincronización está lleno. Tus carpetas siguen guardadas en este dispositivo."
+  },
+  "upgradeTitle": {
+    "message": "Pásate a Pro"
+  },
+  "upgradeText": {
+    "message": "El plan gratis incluye $1 carpetas con chats ilimitados. Pro quita el límite:"
+  },
+  "proFeature1": {
+    "message": "Carpetas ilimitadas"
+  },
+  "proFeature2": {
+    "message": "Sincroniza las carpetas entre tus ordenadores (sincronización de Chrome)"
+  },
+  "proFeature3": {
+    "message": "Apoya a un desarrollador independiente y las próximas funciones"
+  },
+  "upgradeCancel": {
+    "message": "Pago seguro con Stripe. Cancela cuando quieras con un clic."
+  },
+  "restorePurchase": {
+    "message": "¿Ya pagaste? Inicia sesión"
+  },
+  "upgradeButton": {
+    "message": "Ver planes Pro"
+  },
+  "manageSubscription": {
+    "message": "Gestionar suscripción"
+  },
+  "close": {
+    "message": "Cerrar"
+  },
+  "cancel": {
+    "message": "Cancelar"
+  },
+  "save": {
+    "message": "Guardar"
+  },
+  "delete": {
+    "message": "Eliminar"
+  },
+  "deleteFolder": {
+    "message": "Eliminar carpeta"
+  },
+  "deleteConfirm": {
+    "message": "¿Eliminar \"$1\"? Tus chats siguen en Claude; solo se borra la carpeta."
+  },
+  "searchChats": {
+    "message": "Buscar chats…"
+  },
+  "noChatsVisible": {
+    "message": "No hay chats en esta página."
+  },
+  "moreChatsHint": {
+    "message": "Solo aparecen los chats cargados en la página."
+  },
+  "openChatsPage": {
+    "message": "Abre la página de Chats para ver más"
+  },
+  "addChatsTo": {
+    "message": "Añadir chats a \"$1\""
+  },
+  "addChats": {
+    "message": "Añadir chats…"
+  },
+  "rename": {
+    "message": "Cambiar nombre"
+  },
+  "openClaude": {
+    "message": "Abrir Claude"
+  },
+  "settings": {
+    "message": "Ajustes y copia de seguridad"
+  },
+  "popupStats": {
+    "message": "$1 carpetas · $2 chats organizados"
+  },
+  "free": {
+    "message": "Gratis"
+  },
+  "popupFreeLimit": {
+    "message": "Plan gratis: hasta $1 carpetas, chats ilimitados."
+  },
+  "syncTitle": {
+    "message": "Sincronizar entre dispositivos (Pro)"
+  },
+  "syncText": {
+    "message": "Usa la sincronización de Chrome (tu cuenta de Google). No se envía nada a nuestros servidores."
+  },
+  "syncToggle": {
+    "message": "Sincronizar mis carpetas"
+  },
+  "syncOn": {
+    "message": "Sincronización activada."
+  },
+  "syncOff": {
+    "message": "Sincronización desactivada. Las carpetas se quedan en este dispositivo."
+  },
+  "backupTitle": {
+    "message": "Copia de seguridad"
+  },
+  "backupText": {
+    "message": "Descarga tus carpetas en un archivo JSON o restáuralas desde uno."
+  },
+  "exportJson": {
+    "message": "Exportar"
+  },
+  "importJson": {
+    "message": "Importar"
+  },
+  "importDone": {
+    "message": "Importadas $1 carpetas."
+  },
+  "importTooMany": {
+    "message": "Plan gratis: solo se importaron las primeras $1 carpetas."
+  },
+  "importError": {
+    "message": "Ese archivo no es una copia válida."
+  },
+  "privacyTitle": {
+    "message": "Privacidad"
+  },
+  "privacyText": {
+    "message": "Los nombres de carpetas, IDs y títulos de chats se guardan solo en tu navegador. Nunca leemos tus mensajes."
+  }
+}

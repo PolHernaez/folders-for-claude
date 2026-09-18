@@ -1,0 +1,185 @@
+{
+  "extName": {
+    "message": "Folders for Claude – Organize & Search Chats"
+  },
+  "extShortName": {
+    "message": "Folders for Claude"
+  },
+  "extDescription": {
+    "message": "Organize your Claude chats into folders right in the sidebar. Search, color-code and find any conversation in seconds."
+  },
+  "folders": {
+    "message": "Folders"
+  },
+  "addCurrentChat": {
+    "message": "Add this chat to a folder"
+  },
+  "search": {
+    "message": "Search"
+  },
+  "newFolder": {
+    "message": "New folder"
+  },
+  "newFolderWithChat": {
+    "message": "New folder with this chat…"
+  },
+  "searchInFolders": {
+    "message": "Search in folders…"
+  },
+  "folderOptions": {
+    "message": "Folder options"
+  },
+  "removeFromFolder": {
+    "message": "Remove from folder"
+  },
+  "untitled": {
+    "message": "Untitled chat"
+  },
+  "emptyFolder": {
+    "message": "Empty. Open a chat and use the folder+ button."
+  },
+  "createFirstFolder": {
+    "message": "+ Create your first folder"
+  },
+  "noResults": {
+    "message": "No matches"
+  },
+  "freeLimitReached": {
+    "message": "Free plan: $1 folders. Upgrade for unlimited →"
+  },
+  "rateAsk": {
+    "message": "Folders helping you? A quick rating helps a solo developer a lot."
+  },
+  "rateYes": {
+    "message": "Rate it"
+  },
+  "dismiss": {
+    "message": "Not now"
+  },
+  "syncFull": {
+    "message": "Sync storage is full. Your folders are still saved on this device."
+  },
+  "upgradeTitle": {
+    "message": "Upgrade to Pro"
+  },
+  "upgradeText": {
+    "message": "The free plan includes $1 folders with unlimited chats. Pro removes the limit:"
+  },
+  "proFeature1": {
+    "message": "Unlimited folders"
+  },
+  "proFeature2": {
+    "message": "Sync folders across your computers (Chrome sync)"
+  },
+  "proFeature3": {
+    "message": "Support an independent developer and future features"
+  },
+  "upgradeCancel": {
+    "message": "Secure payment with Stripe. Cancel anytime in one click."
+  },
+  "restorePurchase": {
+    "message": "Already paid? Log in"
+  },
+  "upgradeButton": {
+    "message": "See Pro plans"
+  },
+  "manageSubscription": {
+    "message": "Manage subscription"
+  },
+  "close": {
+    "message": "Close"
+  },
+  "cancel": {
+    "message": "Cancel"
+  },
+  "save": {
+    "message": "Save"
+  },
+  "delete": {
+    "message": "Delete"
+  },
+  "deleteFolder": {
+    "message": "Delete folder"
+  },
+  "deleteConfirm": {
+    "message": "Delete \"$1\"? Your chats stay in Claude; only the folder is removed."
+  },
+  "searchChats": {
+    "message": "Search chats…"
+  },
+  "noChatsVisible": {
+    "message": "No chats found on this page."
+  },
+  "moreChatsHint": {
+    "message": "Only chats loaded on the page are listed."
+  },
+  "openChatsPage": {
+    "message": "Open the Chats page to see more"
+  },
+  "addChatsTo": {
+    "message": "Add chats to \"$1\""
+  },
+  "addChats": {
+    "message": "Add chats…"
+  },
+  "rename": {
+    "message": "Rename"
+  },
+  "openClaude": {
+    "message": "Open Claude"
+  },
+  "settings": {
+    "message": "Settings & backup"
+  },
+  "popupStats": {
+    "message": "$1 folders · $2 chats organized"
+  },
+  "free": {
+    "message": "Free"
+  },
+  "popupFreeLimit": {
+    "message": "Free plan: up to $1 folders, unlimited chats."
+  },
+  "syncTitle": {
+    "message": "Sync across devices (Pro)"
+  },
+  "syncText": {
+    "message": "Uses Chrome's own sync (your Google account). Nothing is sent to our servers."
+  },
+  "syncToggle": {
+    "message": "Sync my folders"
+  },
+  "syncOn": {
+    "message": "Sync is on."
+  },
+  "syncOff": {
+    "message": "Sync is off. Folders stay on this device."
+  },
+  "backupTitle": {
+    "message": "Backup"
+  },
+  "backupText": {
+    "message": "Download your folders as a JSON file or restore them from one."
+  },
+  "exportJson": {
+    "message": "Export"
+  },
+  "importJson": {
+    "message": "Import"
+  },
+  "importDone": {
+    "message": "Imported $1 folders."
+  },
+  "importTooMany": {
+    "message": "Free plan: only the first $1 folders were imported."
+  },
+  "importError": {
+    "message": "That file is not a valid backup."
+  },
+  "privacyTitle": {
+    "message": "Privacy"
+  },
+  "privacyText": {
+    "message": "Folder names, chat IDs and chat titles are stored only in your browser. We never read your messages."
+  }
+}

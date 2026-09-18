@@ -1,0 +1,185 @@
+{
+  "extName": {
+    "message": "Dossiers pour Claude – Organisez vos chats"
+  },
+  "extShortName": {
+    "message": "Dossiers pour Claude"
+  },
+  "extDescription": {
+    "message": "Rangez vos chats Claude dans des dossiers, directement dans la barre latérale. Recherchez et retrouvez tout en secondes."
+  },
+  "folders": {
+    "message": "Dossiers"
+  },
+  "addCurrentChat": {
+    "message": "Ajouter ce chat à un dossier"
+  },
+  "search": {
+    "message": "Rechercher"
+  },
+  "newFolder": {
+    "message": "Nouveau dossier"
+  },
+  "newFolderWithChat": {
+    "message": "Nouveau dossier avec ce chat…"
+  },
+  "searchInFolders": {
+    "message": "Rechercher dans les dossiers…"
+  },
+  "folderOptions": {
+    "message": "Options du dossier"
+  },
+  "removeFromFolder": {
+    "message": "Retirer du dossier"
+  },
+  "untitled": {
+    "message": "Chat sans titre"
+  },
+  "emptyFolder": {
+    "message": "Vide. Ouvrez un chat et utilisez le bouton dossier+."
+  },
+  "createFirstFolder": {
+    "message": "+ Créez votre premier dossier"
+  },
+  "noResults": {
+    "message": "Aucun résultat"
+  },
+  "freeLimitReached": {
+    "message": "Offre gratuite : $1 dossiers. Passez à Pro pour l'illimité →"
+  },
+  "rateAsk": {
+    "message": "Les dossiers vous aident ? Une note rapide aide beaucoup un développeur indépendant."
+  },
+  "rateYes": {
+    "message": "Noter"
+  },
+  "dismiss": {
+    "message": "Plus tard"
+  },
+  "syncFull": {
+    "message": "Le stockage de synchronisation est plein. Vos dossiers restent enregistrés sur cet appareil."
+  },
+  "upgradeTitle": {
+    "message": "Passer à Pro"
+  },
+  "upgradeText": {
+    "message": "L'offre gratuite inclut $1 dossiers avec chats illimités. Pro supprime la limite :"
+  },
+  "proFeature1": {
+    "message": "Dossiers illimités"
+  },
+  "proFeature2": {
+    "message": "Synchronisez vos dossiers entre vos ordinateurs (synchro Chrome)"
+  },
+  "proFeature3": {
+    "message": "Soutenez un développeur indépendant et les prochaines fonctions"
+  },
+  "upgradeCancel": {
+    "message": "Paiement sécurisé par Stripe. Résiliable à tout moment en un clic."
+  },
+  "restorePurchase": {
+    "message": "Déjà payé ? Connectez-vous"
+  },
+  "upgradeButton": {
+    "message": "Voir les offres Pro"
+  },
+  "manageSubscription": {
+    "message": "Gérer l'abonnement"
+  },
+  "close": {
+    "message": "Fermer"
+  },
+  "cancel": {
+    "message": "Annuler"
+  },
+  "save": {
+    "message": "Enregistrer"
+  },
+  "delete": {
+    "message": "Supprimer"
+  },
+  "deleteFolder": {
+    "message": "Supprimer le dossier"
+  },
+  "deleteConfirm": {
+    "message": "Supprimer « $1 » ? Vos chats restent dans Claude ; seul le dossier est supprimé."
+  },
+  "searchChats": {
+    "message": "Rechercher des chats…"
+  },
+  "noChatsVisible": {
+    "message": "Aucun chat trouvé sur cette page."
+  },
+  "moreChatsHint": {
+    "message": "Seuls les chats chargés sur la page sont listés."
+  },
+  "openChatsPage": {
+    "message": "Ouvrez la page Chats pour en voir plus"
+  },
+  "addChatsTo": {
+    "message": "Ajouter des chats à « $1 »"
+  },
+  "addChats": {
+    "message": "Ajouter des chats…"
+  },
+  "rename": {
+    "message": "Renommer"
+  },
+  "openClaude": {
+    "message": "Ouvrir Claude"
+  },
+  "settings": {
+    "message": "Paramètres et sauvegarde"
+  },
+  "popupStats": {
+    "message": "$1 dossiers · $2 chats organisés"
+  },
+  "free": {
+    "message": "Gratuit"
+  },
+  "popupFreeLimit": {
+    "message": "Offre gratuite : jusqu'à $1 dossiers, chats illimités."
+  },
+  "syncTitle": {
+    "message": "Synchroniser entre appareils (Pro)"
+  },
+  "syncText": {
+    "message": "Utilise la synchronisation de Chrome (votre compte Google). Rien n'est envoyé à nos serveurs."
+  },
+  "syncToggle": {
+    "message": "Synchroniser mes dossiers"
+  },
+  "syncOn": {
+    "message": "Synchronisation activée."
+  },
+  "syncOff": {
+    "message": "Synchronisation désactivée. Les dossiers restent sur cet appareil."
+  },
+  "backupTitle": {
+    "message": "Sauvegarde"
+  },
+  "backupText": {
+    "message": "Téléchargez vos dossiers en JSON ou restaurez-les depuis un fichier."
+  },
+  "exportJson": {
+    "message": "Exporter"
+  },
+  "importJson": {
+    "message": "Importer"
+  },
+  "importDone": {
+    "message": "$1 dossiers importés."
+  },
+  "importTooMany": {
+    "message": "Offre gratuite : seuls les $1 premiers dossiers ont été importés."
+  },
+  "importError": {
+    "message": "Ce fichier n'est pas une sauvegarde valide."
+  },
+  "privacyTitle": {
+    "message": "Confidentialité"
+  },
+  "privacyText": {
+    "message": "Noms de dossiers, identifiants et titres de chats sont stockés uniquement dans votre navigateur. Nous ne lisons jamais vos messages."
+  }
+}

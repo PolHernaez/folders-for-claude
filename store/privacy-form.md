@@ -52,4 +52,4 @@ Després marca les **tres certificacions**:
 - ✅ I do not use or transfer user data for purposes that are unrelated to my item's single purpose.
 - ✅ I do not use or transfer user data to determine creditworthiness or for lending purposes.
 
-**Privacy policy URL:** `https://<el-teu-usuari>.github.io/<repo>/privacy-policy.html`
+**Privacy policy URL:** `https://polhernaez.github.io/folders-for-claude/privacy-policy.html`

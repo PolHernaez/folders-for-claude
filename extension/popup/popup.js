@@ -24,7 +24,7 @@
     () => {}
   );
 
-  document.getElementById("open").onclick = () => chrome.tabs.create({ url: "https://claude.ai/recents" });
+  document.getElementById("open").onclick = () => chrome.tabs.create({ url: self.CF_CONFIG.homeUrl });
   document.getElementById("upgrade").onclick = () => chrome.runtime.sendMessage({ type: "cf-pay" });
   document.getElementById("manage").onclick = () => chrome.runtime.sendMessage({ type: "cf-pay" });
   document.getElementById("login").onclick = () => chrome.runtime.sendMessage({ type: "cf-login" });

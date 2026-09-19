@@ -97,7 +97,7 @@
         return remote;
       }
     } catch (e) {
-      console.warn("[Folders for Claude] sync read failed", e);
+      console.warn("[Folders] sync read failed", e);
     }
     return local;
   }
@@ -112,7 +112,7 @@
       await writeSync(data);
       return { ok: true };
     } catch (e) {
-      console.warn("[Folders for Claude] sync write failed", e);
+      console.warn("[Folders] sync write failed", e);
       return { ok: false, error: "sync" };
     }
   }

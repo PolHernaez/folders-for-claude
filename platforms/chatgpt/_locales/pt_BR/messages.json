@@ -1,0 +1,185 @@
+{
+  "extName": {
+    "message": "Pastas de chats – Organize e busque chats de IA"
+  },
+  "extShortName": {
+    "message": "Pastas de chats"
+  },
+  "extDescription": {
+    "message": "Funciona com o ChatGPT. Organize seus chats em pastas na barra lateral. Pesquise, use cores e encontre qualquer conversa."
+  },
+  "folders": {
+    "message": "Pastas"
+  },
+  "addCurrentChat": {
+    "message": "Adicionar este chat a uma pasta"
+  },
+  "search": {
+    "message": "Pesquisar"
+  },
+  "newFolder": {
+    "message": "Nova pasta"
+  },
+  "newFolderWithChat": {
+    "message": "Nova pasta com este chat…"
+  },
+  "searchInFolders": {
+    "message": "Pesquisar nas pastas…"
+  },
+  "folderOptions": {
+    "message": "Opções da pasta"
+  },
+  "removeFromFolder": {
+    "message": "Remover da pasta"
+  },
+  "untitled": {
+    "message": "Chat sem título"
+  },
+  "emptyFolder": {
+    "message": "Vazia. Abra um chat e use o botão pasta+."
+  },
+  "createFirstFolder": {
+    "message": "+ Crie sua primeira pasta"
+  },
+  "noResults": {
+    "message": "Nenhum resultado"
+  },
+  "freeLimitReached": {
+    "message": "Plano grátis: $1 pastas. Faça upgrade para ilimitadas →"
+  },
+  "rateAsk": {
+    "message": "As pastas estão ajudando? Uma avaliação rápida ajuda muito um desenvolvedor independente."
+  },
+  "rateYes": {
+    "message": "Avaliar"
+  },
+  "dismiss": {
+    "message": "Agora não"
+  },
+  "syncFull": {
+    "message": "O armazenamento de sincronização está cheio. Suas pastas continuam salvas neste dispositivo."
+  },
+  "upgradeTitle": {
+    "message": "Faça upgrade para Pro"
+  },
+  "upgradeText": {
+    "message": "O plano grátis inclui $1 pastas com chats ilimitados. O Pro remove o limite:"
+  },
+  "proFeature1": {
+    "message": "Pastas ilimitadas"
+  },
+  "proFeature2": {
+    "message": "Sincronize as pastas entre seus computadores (sincronização do Chrome)"
+  },
+  "proFeature3": {
+    "message": "Apoie um desenvolvedor independente e os próximos recursos"
+  },
+  "upgradeCancel": {
+    "message": "Pagamento seguro com Stripe. Cancele quando quiser com um clique."
+  },
+  "restorePurchase": {
+    "message": "Já pagou? Entre"
+  },
+  "upgradeButton": {
+    "message": "Ver planos Pro"
+  },
+  "manageSubscription": {
+    "message": "Gerenciar assinatura"
+  },
+  "close": {
+    "message": "Fechar"
+  },
+  "cancel": {
+    "message": "Cancelar"
+  },
+  "save": {
+    "message": "Salvar"
+  },
+  "delete": {
+    "message": "Excluir"
+  },
+  "deleteFolder": {
+    "message": "Excluir pasta"
+  },
+  "deleteConfirm": {
+    "message": "Excluir \"$1\"? Seus chats continuam no ChatGPT; só a pasta é removida."
+  },
+  "searchChats": {
+    "message": "Pesquisar chats…"
+  },
+  "noChatsVisible": {
+    "message": "Nenhum chat nesta página."
+  },
+  "moreChatsHint": {
+    "message": "Só aparecem os chats carregados na barra lateral. Role a barra lateral para carregar os mais antigos."
+  },
+  "openChatsPage": {
+    "message": "Abra a página de Chats para ver mais"
+  },
+  "addChatsTo": {
+    "message": "Adicionar chats a \"$1\""
+  },
+  "addChats": {
+    "message": "Adicionar chats…"
+  },
+  "rename": {
+    "message": "Renomear"
+  },
+  "openClaude": {
+    "message": "Abrir o ChatGPT"
+  },
+  "settings": {
+    "message": "Configurações e backup"
+  },
+  "popupStats": {
+    "message": "$1 pastas · $2 chats organizados"
+  },
+  "free": {
+    "message": "Grátis"
+  },
+  "popupFreeLimit": {
+    "message": "Plano grátis: até $1 pastas, chats ilimitados."
+  },
+  "syncTitle": {
+    "message": "Sincronizar entre dispositivos (Pro)"
+  },
+  "syncText": {
+    "message": "Usa a sincronização do Chrome (sua conta Google). Nada é enviado aos nossos servidores."
+  },
+  "syncToggle": {
+    "message": "Sincronizar minhas pastas"
+  },
+  "syncOn": {
+    "message": "Sincronização ativada."
+  },
+  "syncOff": {
+    "message": "Sincronização desativada. As pastas ficam neste dispositivo."
+  },
+  "backupTitle": {
+    "message": "Backup"
+  },
+  "backupText": {
+    "message": "Baixe suas pastas em um arquivo JSON ou restaure a partir de um."
+  },
+  "exportJson": {
+    "message": "Exportar"
+  },
+  "importJson": {
+    "message": "Importar"
+  },
+  "importDone": {
+    "message": "$1 pastas importadas."
+  },
+  "importTooMany": {
+    "message": "Plano grátis: só as primeiras $1 pastas foram importadas."
+  },
+  "importError": {
+    "message": "Esse arquivo não é um backup válido."
+  },
+  "privacyTitle": {
+    "message": "Privacidade"
+  },
+  "privacyText": {
+    "message": "Nomes de pastas, IDs e títulos de chats ficam só no seu navegador. Nunca lemos suas mensagens."
+  }
+}

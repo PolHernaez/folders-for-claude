@@ -71,6 +71,20 @@
     return out;
   }
 
+  // Link to a chat, as used in Claude's own sidebar.
+  function chatHref(id) {
+    return "/chat/" + id;
+  }
+
+  // Claude's own link to a chat (clicking it navigates without reloading).
+  function findChatLink(id, excludeRoot) {
+    const a = document.querySelector('a[href="/chat/' + id + '"]');
+    return a && !(excludeRoot && excludeRoot.contains(a)) ? a : null;
+  }
+
+  // Page that lists all chats (null if the site has none).
+  const CHATS_PAGE = "/recents";
+
   function isDarkMode() {
     const mode = document.documentElement.getAttribute("data-mode");
     if (mode) return mode === "dark";
@@ -84,6 +98,9 @@
     currentChatId,
     currentChatTitle,
     visibleChats,
+    chatHref,
+    findChatLink,
+    CHATS_PAGE,
     isDarkMode
   };
 })();

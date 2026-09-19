@@ -8,7 +8,8 @@
 
   function loadMessages(l) {
     const x = new XMLHttpRequest();
-    x.open("GET", "/extension/_locales/" + l + "/messages.json", false);
+    const base = params.get("platform") === "chatgpt" ? "/build/chatgpt/" : "/extension/";
+    x.open("GET", base + "_locales/" + l + "/messages.json", false);
     x.send();
     return JSON.parse(x.responseText);
   }
@@ -60,7 +61,7 @@
     },
     runtime: {
       id: "harness",
-      getURL: (p) => "/extension/" + p,
+      getURL: (p) => (params.get("platform") === "chatgpt" ? "/build/chatgpt/" : "/extension/") + p,
       async sendMessage(msg) {
         if (msg.type === "cf-get-pro") return { pro: params.get("pro") === "1" };
         console.log("[shim] message", msg);

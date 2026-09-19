@@ -7,16 +7,22 @@ from PIL import Image
 sys.path.insert(0, os.path.dirname(__file__))
 from shot import shot
 
+# Usage: python tools/make_store_images.py [claude|chatgpt]
+PLATFORM = sys.argv[1] if len(sys.argv) > 1 else "claude"
+NAME = "Chat Folders" if PLATFORM == "chatgpt" else "Folders for Claude"
+BRAND = "ChatGPT" if PLATFORM == "chatgpt" else "Claude"
+TILE_COLOR = "#1F7A63" if PLATFORM == "chatgpt" else "#c96442"
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
-SRC = os.path.join(ROOT, "store", "src")
-OUT = os.path.join(ROOT, "store", "screenshots")
-MOCK = "http://127.0.0.1:8765/tools/harness/claude-mock.html?"
+STORE = os.path.join(ROOT, "store", "chatgpt") if PLATFORM == "chatgpt" else os.path.join(ROOT, "store")
+SRC = os.path.join(STORE, "src")
+OUT = os.path.join(STORE, "screenshots")
+MOCK = "http://127.0.0.1:8765/tools/harness/claude-mock.html?" + ("platform=chatgpt&" if PLATFORM == "chatgpt" else "")
 os.makedirs(OUT, exist_ok=True)
 
 SHOTS = [
     ("1-folders", "seed=1&pro=1&chat=1",
-     "Folders for your Claude chats",
-     "Group conversations by project, client or topic — right inside Claude's sidebar."),
+     "Folders for your " + BRAND + " chats",
+     "Group conversations by project, client or topic — right inside " + BRAND + "'s sidebar."),
     ("2-add", "seed=1&pro=1&chat=4&demo=menu",
      "Add a chat in one click",
      "Open any chat, press the folder button and pick where it goes. A chat can live in several folders."),
@@ -44,11 +50,12 @@ def shot_url(url, out, w, h):
     shot(redirect, out, w, h)
 
 def frame(params, out, w, h):
-    page = os.path.join(SRC, "frame.html")
+    page = os.path.join(ROOT, "store", "src", "frame.html")
     tmp = os.path.join(SRC, "_frame.html")
     # Copy frame with the query baked in (file:// URLs can't carry a query via shot()).
     html = open(page, encoding="utf-8").read().replace(
-        "new URLSearchParams(location.search)", "new URLSearchParams(" + repr("?" + urllib.parse.urlencode(params)) + ")")
+        "new URLSearchParams(location.search)", "new URLSearchParams(" + repr("?" + urllib.parse.urlencode(params)) + ")"
+    ).replace("#c96442", TILE_COLOR)
     with open(tmp, "w", encoding="utf-8") as f:
         f.write(html)
     shot(tmp, out, w, h)
@@ -60,11 +67,11 @@ for name, params, title, sub in SHOTS:
           os.path.join(OUT, name + ".png"), 1280, 800)
     print("screenshot", name)
 
-frame({"size": "tile", "title": "Folders for Claude", "sub": "Organize & search your chats"},
+frame({"size": "tile", "title": NAME, "sub": "Organize & search your chats"},
       os.path.join(OUT, "promo-small-440x280.png"), 440, 280)
 raw = ui("marquee", "seed=1&pro=1&chat=1", 900, 600)
-frame({"size": "marquee", "img": os.path.basename(raw), "title": "Folders for Claude",
-       "sub": "Organize your Claude chats into folders. Search, color-code and find anything in seconds."},
+frame({"size": "marquee", "img": os.path.basename(raw), "title": NAME,
+       "sub": "Organize your " + BRAND + " chats into folders. Search, color-code and find anything in seconds."},
       os.path.join(OUT, "promo-marquee-1400x560.png"), 1400, 560)
 
 for f in ("_go.html", "_frame.html"):

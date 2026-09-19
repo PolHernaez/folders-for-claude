@@ -1,6 +1,6 @@
 # Generates extension/_locales/*/messages.json from the table below.
-# Edit the texts here and run:  python tools/build_locales.py
-import json, os
+# Edit the texts here and run:  python tools/build_locales.py [claude|chatgpt]
+import json, os, sys
 
 ROOT = os.path.join(os.path.dirname(__file__), "..", "extension", "_locales")
 
@@ -83,6 +83,47 @@ M = {
 "privacyTitle": ["Privacy","Privacidad","Privadesa","Confidentialité","Datenschutz","Privacidade","Privacy"],
 "privacyText": ["Folder names, chat IDs and chat titles are stored only in your browser. We never read your messages.","Los nombres de carpetas, IDs y títulos de chats se guardan solo en tu navegador. Nunca leemos tus mensajes.","Els noms de carpetes, IDs i títols dels xats només es guarden al teu navegador. Mai llegim els teus missatges.","Noms de dossiers, identifiants et titres de chats sont stockés uniquement dans votre navigateur. Nous ne lisons jamais vos messages.","Ordnernamen, Chat-IDs und Chat-Titel werden nur in deinem Browser gespeichert. Wir lesen nie deine Nachrichten.","Nomes de pastas, IDs e títulos de chats ficam só no seu navegador. Nunca lemos suas mensagens.","Nomi delle cartelle, ID e titoli delle chat restano solo nel tuo browser. Non leggiamo mai i tuoi messaggi."]
 }
+
+# ChatGPT build: same texts with the platform name swapped, plus a few overrides.
+# OpenAI doesn't allow "ChatGPT" in product names, so the name is generic and
+# ChatGPT only appears descriptively ("Works with ChatGPT").
+CHATGPT_OVERRIDES = {
+"extName": [
+ "Chat Folders – Organize & Search AI Chats",
+ "Carpetas de chats – Organiza y busca chats de IA",
+ "Carpetes de xats – Organitza i cerca xats d'IA",
+ "Dossiers de chats – Organisez vos chats IA",
+ "Chat-Ordner – KI-Chats organisieren & suchen",
+ "Pastas de chats – Organize e busque chats de IA",
+ "Cartelle chat – Organizza e cerca chat IA"],
+"extShortName": ["Chat Folders","Carpetas de chats","Carpetes de xats","Dossiers de chats","Chat-Ordner","Pastas de chats","Cartelle chat"],
+"extDescription": [
+ "Works with ChatGPT. Organize your chats into folders right in the sidebar. Search, color-code and find any conversation.",
+ "Funciona con ChatGPT. Organiza tus chats en carpetas en la barra lateral. Busca, colorea y encuentra cualquier conversación.",
+ "Funciona amb ChatGPT. Organitza els xats en carpetes a la barra lateral. Cerca, acoloreix i troba qualsevol conversa.",
+ "Fonctionne avec ChatGPT. Rangez vos chats dans des dossiers dans la barre latérale et retrouvez tout en secondes.",
+ "Funktioniert mit ChatGPT. Sortiere Chats in Ordner direkt in der Seitenleiste. Suchen, einfärben, schnell finden.",
+ "Funciona com o ChatGPT. Organize seus chats em pastas na barra lateral. Pesquise, use cores e encontre qualquer conversa.",
+ "Funziona con ChatGPT. Organizza le chat in cartelle nella barra laterale. Cerca, colora e trova ogni conversazione."],
+"moreChatsHint": [
+ "Only chats loaded in the sidebar are listed. Scroll down the sidebar to load older ones.",
+ "Solo aparecen los chats cargados en la barra lateral. Baja por la barra lateral para cargar los más antiguos.",
+ "Només surten els xats carregats a la barra lateral. Baixa per la barra lateral per carregar-ne de més antics.",
+ "Seuls les chats chargés dans la barre latérale sont listés. Faites défiler la barre latérale pour charger les plus anciens.",
+ "Nur in der Seitenleiste geladene Chats werden angezeigt. Scrolle in der Seitenleiste nach unten, um ältere zu laden.",
+ "Só aparecem os chats carregados na barra lateral. Role a barra lateral para carregar os mais antigos.",
+ "Sono elencate solo le chat caricate nella barra laterale. Scorri la barra laterale per caricare quelle più vecchie."],
+}
+
+PLATFORMS = {
+    "claude": (ROOT, lambda s: s, {}),
+    "chatgpt": (os.path.join(os.path.dirname(__file__), "..", "platforms", "chatgpt", "_locales"),
+                lambda s: s.replace("Claude", "ChatGPT"), CHATGPT_OVERRIDES),
+}
+platform = sys.argv[1] if len(sys.argv) > 1 else "claude"
+ROOT, swap, overrides = PLATFORMS[platform]
+M = {k: [swap(v) for v in vals] for k, vals in M.items()}
+M.update(overrides)
 
 for i, lang in enumerate(LANGS):
     out = {}

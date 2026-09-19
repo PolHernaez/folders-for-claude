@@ -1,0 +1,185 @@
+{
+  "extName": {
+    "message": "Carpetes de xats – Organitza i cerca xats d'IA"
+  },
+  "extShortName": {
+    "message": "Carpetes de xats"
+  },
+  "extDescription": {
+    "message": "Funciona amb ChatGPT. Organitza els xats en carpetes a la barra lateral. Cerca, acoloreix i troba qualsevol conversa."
+  },
+  "folders": {
+    "message": "Carpetes"
+  },
+  "addCurrentChat": {
+    "message": "Afegeix aquest xat a una carpeta"
+  },
+  "search": {
+    "message": "Cerca"
+  },
+  "newFolder": {
+    "message": "Carpeta nova"
+  },
+  "newFolderWithChat": {
+    "message": "Carpeta nova amb aquest xat…"
+  },
+  "searchInFolders": {
+    "message": "Cerca a les carpetes…"
+  },
+  "folderOptions": {
+    "message": "Opcions de la carpeta"
+  },
+  "removeFromFolder": {
+    "message": "Treu de la carpeta"
+  },
+  "untitled": {
+    "message": "Xat sense títol"
+  },
+  "emptyFolder": {
+    "message": "Buida. Obre un xat i fes servir el botó carpeta+."
+  },
+  "createFirstFolder": {
+    "message": "+ Crea la teva primera carpeta"
+  },
+  "noResults": {
+    "message": "Cap resultat"
+  },
+  "freeLimitReached": {
+    "message": "Pla gratuït: $1 carpetes. Passa't a Pro per tenir-ne il·limitades →"
+  },
+  "rateAsk": {
+    "message": "T'ajuden les carpetes? Una valoració ràpida ajuda molt a un desenvolupador independent."
+  },
+  "rateYes": {
+    "message": "Valora-la"
+  },
+  "dismiss": {
+    "message": "Ara no"
+  },
+  "syncFull": {
+    "message": "L'emmagatzematge de sincronització és ple. Les carpetes continuen desades en aquest dispositiu."
+  },
+  "upgradeTitle": {
+    "message": "Passa't a Pro"
+  },
+  "upgradeText": {
+    "message": "El pla gratuït inclou $1 carpetes amb xats il·limitats. Pro treu el límit:"
+  },
+  "proFeature1": {
+    "message": "Carpetes il·limitades"
+  },
+  "proFeature2": {
+    "message": "Sincronitza les carpetes entre els teus ordinadors (sincronització de Chrome)"
+  },
+  "proFeature3": {
+    "message": "Dona suport a un desenvolupador independent i a les properes funcions"
+  },
+  "upgradeCancel": {
+    "message": "Pagament segur amb Stripe. Cancel·la quan vulguis amb un clic."
+  },
+  "restorePurchase": {
+    "message": "Ja has pagat? Inicia sessió"
+  },
+  "upgradeButton": {
+    "message": "Mira els plans Pro"
+  },
+  "manageSubscription": {
+    "message": "Gestiona la subscripció"
+  },
+  "close": {
+    "message": "Tanca"
+  },
+  "cancel": {
+    "message": "Cancel·la"
+  },
+  "save": {
+    "message": "Desa"
+  },
+  "delete": {
+    "message": "Elimina"
+  },
+  "deleteFolder": {
+    "message": "Elimina la carpeta"
+  },
+  "deleteConfirm": {
+    "message": "Vols eliminar \"$1\"? Els xats continuen a ChatGPT; només s'esborra la carpeta."
+  },
+  "searchChats": {
+    "message": "Cerca xats…"
+  },
+  "noChatsVisible": {
+    "message": "No hi ha xats en aquesta pàgina."
+  },
+  "moreChatsHint": {
+    "message": "Només surten els xats carregats a la barra lateral. Baixa per la barra lateral per carregar-ne de més antics."
+  },
+  "openChatsPage": {
+    "message": "Obre la pàgina de Xats per veure'n més"
+  },
+  "addChatsTo": {
+    "message": "Afegeix xats a \"$1\""
+  },
+  "addChats": {
+    "message": "Afegeix xats…"
+  },
+  "rename": {
+    "message": "Canvia el nom"
+  },
+  "openClaude": {
+    "message": "Obre ChatGPT"
+  },
+  "settings": {
+    "message": "Configuració i còpia de seguretat"
+  },
+  "popupStats": {
+    "message": "$1 carpetes · $2 xats organitzats"
+  },
+  "free": {
+    "message": "Gratuït"
+  },
+  "popupFreeLimit": {
+    "message": "Pla gratuït: fins a $1 carpetes, xats il·limitats."
+  },
+  "syncTitle": {
+    "message": "Sincronitza entre dispositius (Pro)"
+  },
+  "syncText": {
+    "message": "Fa servir la sincronització de Chrome (el teu compte de Google). No s'envia res als nostres servidors."
+  },
+  "syncToggle": {
+    "message": "Sincronitza les meves carpetes"
+  },
+  "syncOn": {
+    "message": "Sincronització activada."
+  },
+  "syncOff": {
+    "message": "Sincronització desactivada. Les carpetes es queden en aquest dispositiu."
+  },
+  "backupTitle": {
+    "message": "Còpia de seguretat"
+  },
+  "backupText": {
+    "message": "Descarrega les carpetes en un fitxer JSON o restaura-les des d'un."
+  },
+  "exportJson": {
+    "message": "Exporta"
+  },
+  "importJson": {
+    "message": "Importa"
+  },
+  "importDone": {
+    "message": "S'han importat $1 carpetes."
+  },
+  "importTooMany": {
+    "message": "Pla gratuït: només s'han importat les primeres $1 carpetes."
+  },
+  "importError": {
+    "message": "Aquest fitxer no és una còpia vàlida."
+  },
+  "privacyTitle": {
+    "message": "Privadesa"
+  },
+  "privacyText": {
+    "message": "Els noms de carpetes, IDs i títols dels xats només es guarden al teu navegador. Mai llegim els teus missatges."
+  }
+}

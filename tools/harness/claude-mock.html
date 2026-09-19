@@ -2,7 +2,7 @@
 <!-- Mock that reproduces the *structure* of claude.ai's sidebar (same
      data-testid attributes the extension relies on) so we can test the
      content script locally. Query params: lang=ca|es|..., pro=1, reset=1,
-     seed=1 (sample folders), light=1, chat=<id>. -->
+     seed=1 (sample folders), light=1, chat=<id>, platform=chatgpt. -->
 <html data-mode="dark">
   <head>
     <meta charset="utf-8" />
@@ -169,7 +169,15 @@
     </style>
     <script>
       const P = new URLSearchParams(location.search);
+      // ?platform=chatgpt imitates chatgpt.com: /c/<id> links, no data-testid, html.dark
+      const GPT = P.get("platform") === "chatgpt";
+      const BASE = GPT ? "/build/chatgpt/" : "/extension/";
+      const CHAT_PATH = GPT ? "/c/" : "/chat/";
       if (P.get("light") === "1") document.documentElement.setAttribute("data-mode", "light");
+      if (GPT) {
+        document.documentElement.className = P.get("light") === "1" ? "light" : "dark";
+        document.documentElement.setAttribute("data-gpt", "");
+      }
     </script>
     <script src="chrome-shim.js"></script>
     <script>
@@ -238,24 +246,35 @@
     </main>
 
     <script>
+      if (GPT) {
+        // ChatGPT-like sidebar: a <nav> with generated classes, a "Chats" title and the list.
+        document.querySelector("aside").outerHTML =
+          '<aside><nav aria-label="Chat history" style="display:flex;flex-direction:column;height:100%">' +
+          '<div class="brand">Chat app</div><div class="top"><a href="#">＋ New chat</a><a href="#">Search chats</a><a href="#">Library</a></div>' +
+          '<div class="scroll"><div class="xg1"><div class="xg2"><h2 class="sec" style="margin:0;font-weight:400">Projects</h2>' +
+          '<div id="starred"></div></div><div class="xg3"><h2 class="sec" style="margin:8px 0 0;font-weight:400">Chats</h2><div id="recents"></div></div></div></div>' +
+          '<div class="user"><div class="avatar">JD</div> Jamie D.</div></nav></aside>';
+      }
       const byId = Object.fromEntries(CHATS);
       function link(id, title) {
         const a = document.createElement("a");
         a.className = "row";
-        a.href = "/chat/" + id;
+        a.href = CHAT_PATH + id;
         a.textContent = title;
         return a;
       }
-      document.getElementById("starred").appendChild(link(CHATS[15][0], CHATS[15][1]));
+      const pinned = link(CHATS[15][0], CHATS[15][1]);
+      if (GPT) pinned.href = "/g/g-p-6a1b2c-study/c/" + CHATS[15][0]; // project chat
+      document.getElementById("starred").appendChild(pinned);
       CHATS.slice(0, 15).forEach(([id, t]) => document.getElementById("recents").appendChild(link(id, t)));
 
       function show() {
-        const m = /\/chat\/([0-9a-f-]{36})/.exec(location.pathname);
+        const m = /\/c(?:hat)?\/([0-9a-f-]{36})/.exec(location.pathname);
         const t = m ? byId[m[1]] : null;
         document.getElementById("title").textContent = t || "New chat";
-        document.title = t ? t + " - Claude" : "Claude";
+        document.title = GPT ? t || "ChatGPT" : t ? t + " - Claude" : "Claude";
         document.querySelectorAll("aside a.row").forEach((a) =>
-          a.classList.toggle("current", m && a.getAttribute("href") === "/chat/" + m[1])
+          a.classList.toggle("current", !!m && a.getAttribute("href").endsWith("/" + m[1]))
         );
         document.getElementById("thread").innerHTML = t
           ? '<div class="you">' + t + '</div><div class="bot"><p>Sure — here is a first version you can adapt:</p>' +
@@ -272,7 +291,7 @@
       });
       window.addEventListener("popstate", show);
       const start = P.get("chat");
-      if (start) history.replaceState({}, "", "/chat/" + CHATS[+start][0] + location.search);
+      if (start) history.replaceState({}, "", CHAT_PATH + CHATS[+start][0] + location.search);
       show();
     </script>
     <script>
@@ -298,8 +317,17 @@
           document.activeElement && document.activeElement.blur && document.activeElement.blur();
         }, 600);
     </script>
-    <script src="/extension/content/storage.js"></script>
-    <script src="/extension/content/selectors.js"></script>
-    <script src="/extension/content/content.js"></script>
+    <script>
+      // Load the content scripts of the chosen platform, in order.
+      ["content/storage.js", "content/selectors.js", "content/content.js"].reduce(
+        (p, f) => p.then(() => new Promise((ok) => {
+          const sc = document.createElement("script");
+          sc.src = BASE + f;
+          sc.onload = ok;
+          document.body.appendChild(sc);
+        })),
+        Promise.resolve()
+      );
+    </script>
   </body>
 </html>

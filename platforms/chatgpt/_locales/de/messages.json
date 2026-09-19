@@ -1,0 +1,185 @@
+{
+  "extName": {
+    "message": "Chat-Ordner – KI-Chats organisieren & suchen"
+  },
+  "extShortName": {
+    "message": "Chat-Ordner"
+  },
+  "extDescription": {
+    "message": "Funktioniert mit ChatGPT. Sortiere Chats in Ordner direkt in der Seitenleiste. Suchen, einfärben, schnell finden."
+  },
+  "folders": {
+    "message": "Ordner"
+  },
+  "addCurrentChat": {
+    "message": "Diesen Chat zu einem Ordner hinzufügen"
+  },
+  "search": {
+    "message": "Suchen"
+  },
+  "newFolder": {
+    "message": "Neuer Ordner"
+  },
+  "newFolderWithChat": {
+    "message": "Neuer Ordner mit diesem Chat…"
+  },
+  "searchInFolders": {
+    "message": "In Ordnern suchen…"
+  },
+  "folderOptions": {
+    "message": "Ordneroptionen"
+  },
+  "removeFromFolder": {
+    "message": "Aus Ordner entfernen"
+  },
+  "untitled": {
+    "message": "Unbenannter Chat"
+  },
+  "emptyFolder": {
+    "message": "Leer. Öffne einen Chat und nutze den Ordner+-Button."
+  },
+  "createFirstFolder": {
+    "message": "+ Erstelle deinen ersten Ordner"
+  },
+  "noResults": {
+    "message": "Keine Treffer"
+  },
+  "freeLimitReached": {
+    "message": "Kostenlos: $1 Ordner. Upgrade für unbegrenzt →"
+  },
+  "rateAsk": {
+    "message": "Helfen dir die Ordner? Eine kurze Bewertung hilft einem Solo-Entwickler sehr."
+  },
+  "rateYes": {
+    "message": "Bewerten"
+  },
+  "dismiss": {
+    "message": "Nicht jetzt"
+  },
+  "syncFull": {
+    "message": "Der Sync-Speicher ist voll. Deine Ordner sind auf diesem Gerät weiterhin gespeichert."
+  },
+  "upgradeTitle": {
+    "message": "Auf Pro upgraden"
+  },
+  "upgradeText": {
+    "message": "Der Gratis-Plan enthält $1 Ordner mit unbegrenzten Chats. Pro hebt das Limit auf:"
+  },
+  "proFeature1": {
+    "message": "Unbegrenzte Ordner"
+  },
+  "proFeature2": {
+    "message": "Ordner zwischen deinen Computern synchronisieren (Chrome-Sync)"
+  },
+  "proFeature3": {
+    "message": "Unterstütze einen unabhängigen Entwickler und neue Funktionen"
+  },
+  "upgradeCancel": {
+    "message": "Sichere Zahlung über Stripe. Jederzeit mit einem Klick kündbar."
+  },
+  "restorePurchase": {
+    "message": "Schon bezahlt? Anmelden"
+  },
+  "upgradeButton": {
+    "message": "Pro-Pläne ansehen"
+  },
+  "manageSubscription": {
+    "message": "Abo verwalten"
+  },
+  "close": {
+    "message": "Schließen"
+  },
+  "cancel": {
+    "message": "Abbrechen"
+  },
+  "save": {
+    "message": "Speichern"
+  },
+  "delete": {
+    "message": "Löschen"
+  },
+  "deleteFolder": {
+    "message": "Ordner löschen"
+  },
+  "deleteConfirm": {
+    "message": "\"$1\" löschen? Deine Chats bleiben in ChatGPT, nur der Ordner wird entfernt."
+  },
+  "searchChats": {
+    "message": "Chats suchen…"
+  },
+  "noChatsVisible": {
+    "message": "Keine Chats auf dieser Seite gefunden."
+  },
+  "moreChatsHint": {
+    "message": "Nur in der Seitenleiste geladene Chats werden angezeigt. Scrolle in der Seitenleiste nach unten, um ältere zu laden."
+  },
+  "openChatsPage": {
+    "message": "Öffne die Chats-Seite für mehr"
+  },
+  "addChatsTo": {
+    "message": "Chats zu \"$1\" hinzufügen"
+  },
+  "addChats": {
+    "message": "Chats hinzufügen…"
+  },
+  "rename": {
+    "message": "Umbenennen"
+  },
+  "openClaude": {
+    "message": "ChatGPT öffnen"
+  },
+  "settings": {
+    "message": "Einstellungen & Backup"
+  },
+  "popupStats": {
+    "message": "$1 Ordner · $2 Chats organisiert"
+  },
+  "free": {
+    "message": "Gratis"
+  },
+  "popupFreeLimit": {
+    "message": "Gratis: bis zu $1 Ordner, unbegrenzte Chats."
+  },
+  "syncTitle": {
+    "message": "Geräteübergreifend synchronisieren (Pro)"
+  },
+  "syncText": {
+    "message": "Nutzt Chromes eigene Synchronisierung (dein Google-Konto). Nichts wird an unsere Server gesendet."
+  },
+  "syncToggle": {
+    "message": "Meine Ordner synchronisieren"
+  },
+  "syncOn": {
+    "message": "Synchronisierung aktiv."
+  },
+  "syncOff": {
+    "message": "Synchronisierung aus. Ordner bleiben auf diesem Gerät."
+  },
+  "backupTitle": {
+    "message": "Backup"
+  },
+  "backupText": {
+    "message": "Lade deine Ordner als JSON-Datei herunter oder stelle sie daraus wieder her."
+  },
+  "exportJson": {
+    "message": "Exportieren"
+  },
+  "importJson": {
+    "message": "Importieren"
+  },
+  "importDone": {
+    "message": "$1 Ordner importiert."
+  },
+  "importTooMany": {
+    "message": "Gratis-Plan: nur die ersten $1 Ordner wurden importiert."
+  },
+  "importError": {
+    "message": "Diese Datei ist kein gültiges Backup."
+  },
+  "privacyTitle": {
+    "message": "Datenschutz"
+  },
+  "privacyText": {
+    "message": "Ordnernamen, Chat-IDs und Chat-Titel werden nur in deinem Browser gespeichert. Wir lesen nie deine Nachrichten."
+  }
+}

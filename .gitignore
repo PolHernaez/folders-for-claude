@@ -2,3 +2,4 @@ dist/
 .claude/
 store/src/_*.html
 __pycache__/
+build/

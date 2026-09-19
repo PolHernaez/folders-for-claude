@@ -1,0 +1,34 @@
+
+/* ---------- ChatGPT theme (appended to content.css by tools/build.py) ---------- */
+.cf-dark {
+  --cf-text: #ececec;
+  --cf-text-2: #cdcdcd;
+  --cf-muted: #9b9b9b;
+  --cf-hover: rgba(255, 255, 255, 0.07);
+  --cf-active: rgba(255, 255, 255, 0.11);
+  --cf-border: rgba(255, 255, 255, 0.12);
+  --cf-surface: #2f2f2f;
+  --cf-input: #212121;
+  --cf-accent: #3fb68b;
+}
+
+.cf-light {
+  --cf-text: #0d0d0d;
+  --cf-text-2: #424242;
+  --cf-muted: #8f8f8f;
+  --cf-hover: rgba(0, 0, 0, 0.05);
+  --cf-active: rgba(0, 0, 0, 0.08);
+  --cf-surface: #ffffff;
+  --cf-input: #f9f9f9;
+  --cf-accent: #1f7a63;
+}
+
+.cf-root,
+.cf-layer,
+.cf-floating {
+  font-family: ui-sans-serif, -apple-system, system-ui, "Segoe UI", Helvetica, Arial, sans-serif;
+}
+
+.cf-root {
+  margin: 4px 0 12px;
+}

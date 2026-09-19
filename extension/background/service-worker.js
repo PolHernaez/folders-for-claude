@@ -3,10 +3,10 @@
 // - Caches the result in chrome.storage.local ("cf_pro") so the content
 //   script works offline and doesn't hit the network on every page load.
 // - Opens the payment / login pages when the UI asks for them.
-importScripts("../lib/ExtPay.js");
+importScripts("config.js", "../lib/ExtPay.js");
 
-// ⚠️ Must match the extension ID you register at https://extensionpay.com
-const EXTPAY_ID = "mapph-claude-folders";
+// ExtensionPay ID and URLs live in background/config.js (one per platform).
+const EXTPAY_ID = self.CF_CONFIG.extpayId;
 
 const extpay = ExtPay(EXTPAY_ID);
 extpay.startBackground();
@@ -30,7 +30,7 @@ async function refreshPro(force) {
     return pro;
   } catch (e) {
     // Offline or ExtensionPay down: keep the last known value.
-    console.warn("[Folders for Claude] could not reach ExtensionPay", e);
+    console.warn("[Folders] could not reach ExtensionPay", e);
     return cf_pro;
   }
 }
@@ -53,6 +53,6 @@ chrome.runtime.onMessage.addListener((msg, sender, sendResponse) => {
 chrome.runtime.onInstalled.addListener((details) => {
   if (details.reason === "install") {
     // Show the user where the feature lives right after installing.
-    chrome.tabs.create({ url: "https://claude.ai/recents" });
+    chrome.tabs.create({ url: self.CF_CONFIG.homeUrl });
   }
 });

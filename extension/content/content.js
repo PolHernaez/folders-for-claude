@@ -11,7 +11,7 @@
 
   const Store = self.CFStore;
   const Sel = self.CFSel;
-  const LOG = "[Folders for Claude]";
+  const LOG = "[Folders]";
 
   const t = (key, subs) => {
     try {
@@ -157,9 +157,9 @@
 
   function openChat(chatId) {
     // Prefer clicking Claude's own link so its router does an in-app navigation.
-    const own = document.querySelector('a[href="/chat/' + chatId + '"]');
-    if (own && !(panelHost && panelHost.contains(own))) own.click();
-    else location.assign("/chat/" + chatId);
+    const own = Sel.findChatLink(chatId, panelHost);
+    if (own) own.click();
+    else location.assign(Sel.chatHref(chatId));
   }
 
   // ---------- actions ----------
@@ -448,19 +448,21 @@
     draw();
 
     const hint = h("p", { class: "cf-muted" }, [t("moreChatsHint") + " "]);
-    hint.appendChild(
-      h("a", {
-        href: "/recents",
-        text: t("openChatsPage"),
-        onclick: (e) => {
-          e.preventDefault();
-          closeOverlay();
-          const own = document.querySelector('a[href="/recents"]');
-          if (own) own.click();
-          else location.assign("/recents");
-        }
-      })
-    );
+    if (Sel.CHATS_PAGE) {
+      hint.appendChild(
+        h("a", {
+          href: Sel.CHATS_PAGE,
+          text: t("openChatsPage"),
+          onclick: (e) => {
+            e.preventDefault();
+            closeOverlay();
+            const own = document.querySelector('a[href="' + Sel.CHATS_PAGE + '"]');
+            if (own) own.click();
+            else location.assign(Sel.CHATS_PAGE);
+          }
+        })
+      );
+    }
 
     openModal(t("addChatsTo", [folder.name]), h("div", { class: "cf-modal-body" }, [search, list, hint]), [
       { label: t("cancel") },
@@ -707,7 +709,7 @@
             [
               h("a", {
                 class: "cf-chat-link",
-                href: "/chat/" + chat.id,
+                href: Sel.chatHref(chat.id),
                 title: chat.title,
                 text: chat.title || t("untitled"),
                 onclick: (e) => {

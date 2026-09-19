@@ -1,0 +1,185 @@
+{
+  "extName": {
+    "message": "Cartelle chat – Organizza e cerca chat IA"
+  },
+  "extShortName": {
+    "message": "Cartelle chat"
+  },
+  "extDescription": {
+    "message": "Funziona con ChatGPT. Organizza le chat in cartelle nella barra laterale. Cerca, colora e trova ogni conversazione."
+  },
+  "folders": {
+    "message": "Cartelle"
+  },
+  "addCurrentChat": {
+    "message": "Aggiungi questa chat a una cartella"
+  },
+  "search": {
+    "message": "Cerca"
+  },
+  "newFolder": {
+    "message": "Nuova cartella"
+  },
+  "newFolderWithChat": {
+    "message": "Nuova cartella con questa chat…"
+  },
+  "searchInFolders": {
+    "message": "Cerca nelle cartelle…"
+  },
+  "folderOptions": {
+    "message": "Opzioni cartella"
+  },
+  "removeFromFolder": {
+    "message": "Rimuovi dalla cartella"
+  },
+  "untitled": {
+    "message": "Chat senza titolo"
+  },
+  "emptyFolder": {
+    "message": "Vuota. Apri una chat e usa il pulsante cartella+."
+  },
+  "createFirstFolder": {
+    "message": "+ Crea la tua prima cartella"
+  },
+  "noResults": {
+    "message": "Nessun risultato"
+  },
+  "freeLimitReached": {
+    "message": "Piano gratuito: $1 cartelle. Passa a Pro per illimitate →"
+  },
+  "rateAsk": {
+    "message": "Le cartelle ti aiutano? Una valutazione veloce aiuta molto uno sviluppatore indipendente."
+  },
+  "rateYes": {
+    "message": "Valuta"
+  },
+  "dismiss": {
+    "message": "Non ora"
+  },
+  "syncFull": {
+    "message": "Lo spazio di sincronizzazione è pieno. Le cartelle restano salvate su questo dispositivo."
+  },
+  "upgradeTitle": {
+    "message": "Passa a Pro"
+  },
+  "upgradeText": {
+    "message": "Il piano gratuito include $1 cartelle con chat illimitate. Pro rimuove il limite:"
+  },
+  "proFeature1": {
+    "message": "Cartelle illimitate"
+  },
+  "proFeature2": {
+    "message": "Sincronizza le cartelle tra i tuoi computer (sincronizzazione di Chrome)"
+  },
+  "proFeature3": {
+    "message": "Sostieni uno sviluppatore indipendente e le prossime funzioni"
+  },
+  "upgradeCancel": {
+    "message": "Pagamento sicuro con Stripe. Annulla quando vuoi con un clic."
+  },
+  "restorePurchase": {
+    "message": "Hai già pagato? Accedi"
+  },
+  "upgradeButton": {
+    "message": "Vedi i piani Pro"
+  },
+  "manageSubscription": {
+    "message": "Gestisci abbonamento"
+  },
+  "close": {
+    "message": "Chiudi"
+  },
+  "cancel": {
+    "message": "Annulla"
+  },
+  "save": {
+    "message": "Salva"
+  },
+  "delete": {
+    "message": "Elimina"
+  },
+  "deleteFolder": {
+    "message": "Elimina cartella"
+  },
+  "deleteConfirm": {
+    "message": "Eliminare \"$1\"? Le chat restano in ChatGPT; viene rimossa solo la cartella."
+  },
+  "searchChats": {
+    "message": "Cerca chat…"
+  },
+  "noChatsVisible": {
+    "message": "Nessuna chat in questa pagina."
+  },
+  "moreChatsHint": {
+    "message": "Sono elencate solo le chat caricate nella barra laterale. Scorri la barra laterale per caricare quelle più vecchie."
+  },
+  "openChatsPage": {
+    "message": "Apri la pagina Chat per vederne altre"
+  },
+  "addChatsTo": {
+    "message": "Aggiungi chat a \"$1\""
+  },
+  "addChats": {
+    "message": "Aggiungi chat…"
+  },
+  "rename": {
+    "message": "Rinomina"
+  },
+  "openClaude": {
+    "message": "Apri ChatGPT"
+  },
+  "settings": {
+    "message": "Impostazioni e backup"
+  },
+  "popupStats": {
+    "message": "$1 cartelle · $2 chat organizzate"
+  },
+  "free": {
+    "message": "Gratis"
+  },
+  "popupFreeLimit": {
+    "message": "Piano gratuito: fino a $1 cartelle, chat illimitate."
+  },
+  "syncTitle": {
+    "message": "Sincronizza tra dispositivi (Pro)"
+  },
+  "syncText": {
+    "message": "Usa la sincronizzazione di Chrome (il tuo account Google). Nulla viene inviato ai nostri server."
+  },
+  "syncToggle": {
+    "message": "Sincronizza le mie cartelle"
+  },
+  "syncOn": {
+    "message": "Sincronizzazione attiva."
+  },
+  "syncOff": {
+    "message": "Sincronizzazione disattivata. Le cartelle restano su questo dispositivo."
+  },
+  "backupTitle": {
+    "message": "Backup"
+  },
+  "backupText": {
+    "message": "Scarica le cartelle in un file JSON o ripristinale da uno."
+  },
+  "exportJson": {
+    "message": "Esporta"
+  },
+  "importJson": {
+    "message": "Importa"
+  },
+  "importDone": {
+    "message": "$1 cartelle importate."
+  },
+  "importTooMany": {
+    "message": "Piano gratuito: importate solo le prime $1 cartelle."
+  },
+  "importError": {
+    "message": "Questo file non è un backup valido."
+  },
+  "privacyTitle": {
+    "message": "Privacy"
+  },
+  "privacyText": {
+    "message": "Nomi delle cartelle, ID e titoli delle chat restano solo nel tuo browser. Non leggiamo mai i tuoi messaggi."
+  }
+}

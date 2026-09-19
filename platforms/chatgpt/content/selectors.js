@@ -47,11 +47,45 @@
       el = parent;
     }
     if (!el.parentElement) return null;
-    // Put the folders above the list's title, not between title and list.
-    let before = el;
-    const prev = el.previousElementSibling;
-    if (prev && prev.id !== "cf-folders-host" && looksLikeHeading(prev)) before = prev;
+    // Put the folders above the list's title ("Recents"/"Chats"), not between
+    // the title and the list.
+    const heading = findHeadingAbove(sidebar, links[0]);
+    const before = heading || el;
     return { parent: before.parentElement, before };
+  }
+
+  // The title just above the first chat, found by position on screen (ChatGPT
+  // nests it differently from build to build). Returns its outermost wrapper
+  // that holds no chat links, or null.
+  function findHeadingAbove(sidebar, firstLink) {
+    const linkTop = firstLink.getBoundingClientRect().top;
+    const host = document.getElementById("cf-folders-host");
+    const hr = host && sidebar.contains(host) ? host.getBoundingClientRect() : null;
+    let best = null;
+    let bestGap = 80; // must be within 80px above the first chat
+    sidebar.querySelectorAll("h1,h2,h3,h4,h5,h6,button,div,span,p").forEach((node) => {
+      if (host && host.contains(node)) return;
+      if (node.children.length > 3 || !looksLikeHeading(node)) return;
+      const r = node.getBoundingClientRect();
+      let gap = linkTop - r.bottom;
+      // Our own panel sitting between this title and the list doesn't count as distance.
+      if (hr && hr.top >= r.bottom - 2 && hr.bottom <= linkTop + 2) gap -= hr.height;
+      if (r.height > 0 && gap >= -2 && gap < bestGap) {
+        best = node;
+        bestGap = gap;
+      }
+    });
+    if (!best) return null;
+    // Climb to the outermost wrapper of the title that still has no chat links.
+    while (
+      best.parentElement &&
+      best.parentElement !== sidebar &&
+      !best.parentElement.querySelector(HISTORY_LINK) &&
+      [...best.parentElement.children].every((c) => c === best || c === host || !c.querySelector("a"))
+    ) {
+      best = best.parentElement;
+    }
+    return best;
   }
 
   function chatIdFromHref(href) {

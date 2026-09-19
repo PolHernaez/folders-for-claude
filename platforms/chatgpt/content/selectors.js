@@ -24,7 +24,8 @@
 
   // Short text block with no links: the "Chats" / "Your chats" title above the list.
   function looksLikeHeading(el) {
-    if (!el || el.matches("a") || el.querySelector("a")) return false;
+    // A title may hold a link or button (ChatGPT's "Recents" header does), but never chats.
+    if (!el || el.matches("a") || el.querySelector(CHAT_LINK)) return false;
     const text = (el.textContent || "").trim();
     return text.length > 0 && text.length <= 40 && el.getBoundingClientRect().height <= 60;
   }
@@ -59,6 +60,12 @@
       el = parent;
     }
     if (!el.parentElement) return null;
+    // Known layout (Sept 2026): the history is a collapsible
+    // "group/sidebar-expando-section" = [header "Recents", spacer, list]. Go above it.
+    const section = el.closest('[class*="sidebar-expando-section"]:not([class*="section-header"])');
+    if (section && section !== sidebar && sidebar.contains(section) && section.parentElement) {
+      return { parent: section.parentElement, before: section };
+    }
     // Put the folders above the list's title ("Recents"/"Chats"), not between the
     // title and the list. Purely structural (no screen positions), so our own panel
     // moving around can never change the answer.

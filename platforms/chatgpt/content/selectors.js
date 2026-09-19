@@ -24,9 +24,16 @@
 
   // Short text block with no links: the "Chats" / "Your chats" title above the list.
   function looksLikeHeading(el) {
-    if (!el || el.querySelector("a")) return false;
+    if (!el || el.matches("a") || el.querySelector("a")) return false;
     const text = (el.textContent || "").trim();
-    return text.length > 0 && text.length <= 40 && el.getBoundingClientRect().height <= 48;
+    return text.length > 0 && text.length <= 40 && el.getBoundingClientRect().height <= 60;
+  }
+
+  // Previous element sibling, ignoring our own panel.
+  function prevSibling(node) {
+    let p = node.previousElementSibling;
+    if (p && p.id === "cf-folders-host") p = p.previousElementSibling;
+    return p;
   }
 
   // Returns { parent, before } to insert our panel above the chat history, or null.
@@ -50,10 +57,21 @@
     // Put the folders above the list's title ("Recents"/"Chats"), not between the
     // title and the list. Purely structural (no screen positions), so our own panel
     // moving around can never change the answer.
-    let before = el;
-    let prev = el.previousElementSibling;
-    if (prev && prev.id === "cf-folders-host") prev = prev.previousElementSibling;
-    if (prev && looksLikeHeading(prev)) before = prev;
+    // Case 1: the title is inside the list block (first child) → go above the block.
+    const first = el.firstElementChild;
+    if (first && first.id !== "cf-folders-host" && looksLikeHeading(first)) {
+      return { parent: el.parentElement, before: el };
+    }
+    // Case 2: the title comes right before the list block, possibly one or more
+    // levels up (ChatGPT wraps things differently between builds): climb while the
+    // current block is the first child, then look at what precedes it.
+    let cur = el;
+    for (let i = 0; i < 4 && cur.parentElement && cur.parentElement !== sidebar; i++) {
+      if (prevSibling(cur)) break;
+      cur = cur.parentElement;
+    }
+    const prev = prevSibling(cur);
+    const before = prev && looksLikeHeading(prev) ? prev : cur;
     return { parent: before.parentElement, before };
   }
 

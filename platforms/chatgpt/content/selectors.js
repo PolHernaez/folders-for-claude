@@ -29,10 +29,15 @@
     return text.length > 0 && text.length <= 40 && el.getBoundingClientRect().height <= 60;
   }
 
-  // Previous element sibling, ignoring our own panel.
+  // Empty spacer/sentinel blocks ChatGPT puts between sections.
+  function isSpacer(el) {
+    return !el.querySelector("a,button") && !(el.textContent || "").trim();
+  }
+
+  // Previous element sibling, ignoring our own panel and empty spacers.
   function prevSibling(node) {
     let p = node.previousElementSibling;
-    if (p && p.id === "cf-folders-host") p = p.previousElementSibling;
+    while (p && (p.id === "cf-folders-host" || isSpacer(p))) p = p.previousElementSibling;
     return p;
   }
 

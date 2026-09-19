@@ -59,6 +59,7 @@
   let overlayRoot = null;
   let observer = null;
   let tickTimer = null;
+  let pendingSpot = null; // candidate new position waiting for confirmation
 
   // ---------- helpers ----------
 
@@ -827,8 +828,14 @@
     ensureHost();
     const point = Sel.getMountPoint();
     if (point) {
-      if (panelHost.parentElement !== point.parent || panelHost.nextSibling !== point.before) {
+      const misplaced = panelHost.parentElement !== point.parent || panelHost.nextSibling !== point.before;
+      // Anti-flicker: once shown in the sidebar, only move when the new spot is
+      // the same on two checks in a row (a spot that keeps changing is ignored).
+      const settled = !panelHost.isConnected || state.mode !== "inline" || pendingSpot === point.before;
+      pendingSpot = misplaced ? point.before : null;
+      if (misplaced && settled) {
         point.parent.insertBefore(panelHost, point.before);
+        pendingSpot = null;
       }
       panelHost.style.cssText = "";
       if (state.mode !== "inline") {

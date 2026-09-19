@@ -46,4 +46,4 @@ El teu compte de desenvolupador té un límit de **2 extensions publicades**. Am
 
 ## Nota per a Claude
 
-La de Claude ara també llegeix `background/config.js`. El zip `dist/folders-for-claude-1.0.0.zip` s'ha regenerat amb aquest canvi (funciona igual). **La propera vegada que publiquis una actualització de Claude, puja la versió a 1.0.1** al `extension/manifest.json`.
+La de Claude ara també llegeix `background/config.js`. El zip `dist/folders-for-claude-1.0.0.zip` s'ha regenerat amb aquest canvi (funciona igual). La de Claude ja és a la **1.0.1** (`dist/folders-for-claude-1.0.1.zip`): puja-la com a actualització quan Google aprovi la 1.0.0.

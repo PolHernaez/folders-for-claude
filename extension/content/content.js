@@ -816,6 +816,14 @@
   // ---------- mounting ----------
 
   function ensureHost() {
+    // Another copy of the extension (e.g. the Web Store one plus an unpacked
+    // build) is already showing its panel: stay quiet instead of drawing a
+    // second Folders section with different data.
+    if (!panelHost && document.getElementById("cf-folders-host")) {
+      console.warn(LOG, "another copy of this extension is already running on this page");
+      shutdown(true);
+      return;
+    }
     if (panelHost) return;
     panelHost = h("div", { id: "cf-folders-host" });
     isolateKeys(panelHost);
@@ -826,6 +834,7 @@
 
   function mount() {
     ensureHost();
+    if (!panelHost) return false; // another copy is in charge
     const point = Sel.getMountPoint();
     if (point) {
       const misplaced = panelHost.parentElement !== point.parent || panelHost.nextSibling !== point.before;
@@ -883,6 +892,13 @@
 
   const tick = guard(async function () {
     if (!contextAlive()) return shutdown(true);
+    // Both copies may have mounted at the same instant: the first one in the
+    // page wins, the rest remove themselves.
+    const hosts = document.querySelectorAll("#cf-folders-host");
+    if (hosts.length > 1 && hosts[0] !== panelHost) {
+      console.warn(LOG, "another copy of this extension is already running on this page");
+      return shutdown(true);
+    }
     let needRender = mount();
     if (location.pathname !== state.lastPath) {
       state.lastPath = location.pathname;

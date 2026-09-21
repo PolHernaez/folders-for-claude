@@ -11,7 +11,7 @@ Extensió de Chrome (Manifest V3, JavaScript sense framework, sense build) que a
 | 3. Construcció | ✅ Codi fet, provat en maqueta i a claude.ai real | [pla/03-proves.md](pla/03-proves.md) |
 | 4. Monetització | ✅ ExtensionPay (`mapph-claude-folders`) + Stripe en mode real · pagament i cancel·lació de prova OK | [pla/04-monetitzacio.md](pla/04-monetitzacio.md) |
 | 5. Fitxa botiga | ✅ Textos 7 idiomes, captures, tile, privacitat | [store/](store/) |
-| 6. Publicació | ✅ Enviada a revisió el 19/09/2026 | [pla/06-publicacio.md](pla/06-publicacio.md) |
+| 6. Publicació | ✅ **Publicada** el 21/09/2026 · [fitxa a la botiga](https://chromewebstore.google.com/detail/cjagakgmeodecbdhagkidecmngdelahp) | [pla/06-publicacio.md](pla/06-publicacio.md) |
 | 7. Operació | ✅ Rutina escrita | [OPERACIO.md](OPERACIO.md) |
 | Versió ChatGPT ("Chat Folders") | ✅ Codi, textos, imatges, web · ⏳ provar amb sessió iniciada, ExtensionPay, publicar | [pla/07-chatgpt.md](pla/07-chatgpt.md) |
 
@@ -51,5 +51,6 @@ Banc de proves: amb el servidor engegat, obre `http://127.0.0.1:8765/tools/harne
 
 ## El que queda per fer (tu)
 
-1. Esperar la revisió de Folders for Claude (1-7 dies).
-2. Versió ChatGPT → [pla/07-chatgpt.md](pla/07-chatgpt.md)
+1. Captures reals a claude.ai (les d'ara són d'una maqueta) i traduccions de la fitxa als altres idiomes.
+2. Seguiment setmanal → [OPERACIO.md](OPERACIO.md)
+3. Pujar la 1.0.1 com a actualització.

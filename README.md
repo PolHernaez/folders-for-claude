@@ -13,7 +13,7 @@ Extensió de Chrome (Manifest V3, JavaScript sense framework, sense build) que a
 | 5. Fitxa botiga | ✅ Textos 7 idiomes, captures, tile, privacitat | [store/](store/) |
 | 6. Publicació | ✅ **Publicada** el 21/09/2026 · [fitxa a la botiga](https://chromewebstore.google.com/detail/cjagakgmeodecbdhagkidecmngdelahp) | [pla/06-publicacio.md](pla/06-publicacio.md) |
 | 7. Operació | ✅ Rutina escrita | [OPERACIO.md](OPERACIO.md) |
-| Versió ChatGPT ("Chat Folders") | ✅ Codi, textos, imatges, web · ⏳ provar amb sessió iniciada, ExtensionPay, publicar | [pla/07-chatgpt.md](pla/07-chatgpt.md) |
+| Versió ChatGPT ("Carpetas de chats") | ✅ **Publicada** el 21/09/2026 · [fitxa a la botiga](https://chromewebstore.google.com/detail/bomelhjdgoihkdefdcpcmgmhhddogpfj) | [pla/07-chatgpt.md](pla/07-chatgpt.md) |
 
 ## Estructura
 
